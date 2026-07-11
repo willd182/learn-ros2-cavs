@@ -9,7 +9,8 @@ Requirements for this software are provided in an adjacent [REQUIREMENTS](REQUIR
 # Pre-requisites
 This repository assumes that you have:
 - Visual Studio Code
-    - Install the Remote Development Extension Pack
+    - Remote Development Extension Pack
+    - Devcontainers Extension
 - ROS2 Workspace
     - See the [SETUP GUIDE](guides/00_SetupWorkspace.md) if missing
 
