@@ -11,21 +11,7 @@ This repository assumes that you have:
 - Visual Studio Code
     - Install the Remote Development Extension Pack
 - ROS2 Workspace
-    - See [SETUP](setup.md) if missing
+    - See the [SETUP GUIDE](guides/00_SetupWorkspace.md) if missing
 
 # Getting Started
-To get started, first clone this repository.
-
-``` bash
-git clone https://github.com/willd182/learn-ros2-cavs.git
-cd learn-ros2-cavs
-```
-
-Next, create a personal branch based off your name and check it out.
-
-``` bash
-git branch first-last
-git checkout first-last
-```
-
-Finally, goto the guides folder for more instructions.
+To get started, follow the provided instructions in the guides subfolder. Make sure to follow the setup guide if you are starting from scratch.
