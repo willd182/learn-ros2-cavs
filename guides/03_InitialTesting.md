@@ -22,7 +22,7 @@ source install/setup.bash
 Next, you'll want to create a new file to test your module. Put this in the `<package_name>/test/` directory and name it `test_<module_name>.py`. Inside this file, import your module and write a basic test using the [pytest](https://docs.pytest.org/en/stable/) framework.
 
 ```python
-from Set_Speed_Manager.manager import SetSpeedManager
+from set_speed_manager.manager import SetSpeedManager
 
 def test_initial_set_speed():
     SSM = SetSpeedManager()

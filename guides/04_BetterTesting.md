@@ -6,14 +6,14 @@ In our case, an efficient fixture to make would be one that provides us a fresh 
 
 ```python
 import pytest
-from Set_Speed_Manager.manager import SetSpeedManager
+from set_speed_manager.manager import SetSpeedManager
 
 @pytest.fixture
-def set_speed_manager():
+def speed_setpoint():
     return SetSpeedManager()
 
-def test_initial_speed(set_speed_manager):
-    return set_speed_manger.get_speed() == 0
+def test_initial_speed(speed_setpoint):
+    return speed_setpoint.get_speed() == 0
 ```
 
 > **Note:** The name of the fixture function determines the name of the passed input to the test.
@@ -23,10 +23,10 @@ When multiple tests differ only in their inputs or expected results, they can be
 
 ```python
 import pytest
-from Set_Speed_Manager.manager import SetSpeedManager
+from set_speed_manager.manager import SetSpeedManager
 
 @pytest.fixture
-def set_speed_manager():
+def speed_setpoint():
     return SetSpeedManager()
 
 @pytest.mark.parametrize(
@@ -39,9 +39,9 @@ def set_speed_manager():
         pytest.param(70, 65, id='above-maximum'),
     ],
 )
-def test_speed_setting(set_speed_manager, speed, expected):
-    set_speed_manager.set_speed(speed)
-    assert set_speed_manager.get_speed() == expected
+def test_speed_setting(speed_setpoint, speed, expected):
+    speed_setpoint.set_speed(speed)
+    assert speed_setpoint.get_speed() == expected
 ```
 
 >**Note:** When selecting test parameters, think about where your code might behave differently, such as at minimums, maximums, and unusual inputs.
