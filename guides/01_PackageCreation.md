@@ -6,7 +6,7 @@ To create a package for python based code, use the following command
 
 ```bash
 cd /workspaces/learn-ros2-cavs 
-ros2 pkg create --build-type ament_python --dependencies rclpy std_msgs --license Apache-2.0 set_speed_manager
+ros2 pkg create --build-type ament_python --dependencies rclpy std_msgs set_speed_manager
 ```
 
 A new directory should appear in your workspace with the name `set_speed_manager`. This directory is an empty template to fill with your code. Commit this to your feature branch.
