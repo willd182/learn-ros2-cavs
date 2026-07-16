@@ -43,6 +43,4 @@ Next, open the github repo in VSC. It should automatically detect the devcontain
 ## Final Checks
 As a final check, try running `which ros2` in a new terminal. It should output something like `/opt/ros/jazzy/bin/ros2` which is the location of the ROS2 executable. This image comes preinstalled with everything you need to complete the tutorials in this repo.
 
-By this point, you should have a working ROS2 workspace! The next time you open this project in VSCode, it will remember your configuration and open the devcontainer. 
-
-If you open a new project, remember that you can use File->Open Recent to access this project again.
+By this point, you should have a working ROS2 workspace! The next time you open this project in VSCode, it will remember your configuration and open the devcontainer. If you open a new project, remember that you can use File->Open Recent to access this project again.
