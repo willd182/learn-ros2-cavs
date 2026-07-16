@@ -1,7 +1,7 @@
 # Initial Software
-To start writing the code for the Set-Speed Manager, you need to create a new python file under `/Set_Speed_Manager/Set_Speed_Manager/`. You can do this in VSCode by right clicking on that folder and hitting 'New File'.
+To start writing the code for the Set-Speed Manager, you need to create a new python file under `/set_speed_manager/set_speed_manager/`. You can do this in VSCode by right clicking on that folder and hitting 'New File'.
 
-We'll be using the concepts of [Object Oriented Programming](https://www.geeksforgeeks.org/python/python-oops-concepts/) (OOP) to create an *object* that contains all the functionality of our Set-Speed Manager. In short, that means defining a class with all the necessary attributes and methods.
+We'll be using the concepts of [Object Oriented Programming](https://www.geeksforgeeks.org/python/python-oops-concepts/) (OOP) to create an object that contains all the functionality of our Set-Speed Manager. In short, that means defining a class with all the necessary attributes and methods.
 
 > **Note:** OOP also contains concepts such as *inheritance* and *polymorphism*. These are used for modeling more complex hierarchies of classes, which isn't super relevant here.
 

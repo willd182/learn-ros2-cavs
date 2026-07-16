@@ -1,5 +1,5 @@
 # ROS2 Package Creation
-Your first task is to create a new package to contain your 
+Your first task is to create a new package to contain your code.
 
 ## Python Package Creation Command
 To create a package for python based code, use the following command
@@ -41,9 +41,9 @@ colcon build
 ```
 
 You should see an output like:
-> Starting >>> Set_Speed_Manager
+> Starting >>> set_speed_manager
 >
-> Finished <<< Set_Speed_Manager [3.91s]          
+> Finished <<< set_speed_manager [3.91s]          
 > 
 > Summary: 1 package finished [4.88s]
 
