@@ -1,0 +1,12 @@
+# Colcon Build Outputs
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
