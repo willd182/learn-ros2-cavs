@@ -63,4 +63,79 @@ ros2 topic echo /speed_setpoint
 You should see the published messages from your node printed to the console.
 
 ## Adding a Service
+Services are useful for **request-response** interactions such as changing the set speed. In this example, we'll use the standard [Trigger](https://docs.ros.org/en/jazzy/p/std_srvs/srv/Trigger.html) service to increment the speed when requested.
 
+To register a service, we need to define the service type, service name, and callback function.
+
+```python
+import rclpy
+from rclpy.node import Node
+from set_speed_manager.manager import SetSpeedManager
+
+from std_srvs.srv import Trigger
+
+class SetSpeedNode(Node):
+    def __init__(self):
+        super().__init__('set_speed')
+        self.speed_setpoint = SetSpeedManager()
+
+        self.increment_service_ = self.create_service(
+            Trigger,
+            'increment',
+            self.increment_callback
+        )
+
+        self.get_logger().info('Set speed node started!')
+```
+
+Next, define the service callback inside `SetSpeedNode`:
+
+```python
+def increment_callback(self, request, response):
+    self.speed_setpoint.increment_speed()
+    
+    response.success = True
+    response.message = 'Incrementing Speed!'
+
+    self.get_logger().info(response.message)
+    
+    return response
+```
+
+> **Note:** A more robust implementation could set success based on whether the speed actually increased or was limited.
+
+### Dependency Management
+Since this node uses `std_srvs.srv.Trigger`, add `std_srvs` as a dependency in your `package.xml`:
+```xml
+<depend>std_srvs</depend>
+```
+
+### Calling a Service
+Follow the earlier instructions about *listening to a topic* and then in a new terminal call:
+
+```bash
+ros2 service call /increment std_srvs/srv/Trigger
+```
+
+From the above you command, you'll see a response like:
+
+> waiting for service to become available...  
+> requester: making request: std_srvs.srv.Trigger_Request()  
+> 
+> response:  
+> std_srvs.srv.Trigger_Response(success=True, message='Incrementing Speed!') 
+
+If you're listening to the `/speed_setpoint` topic, you should also see the set speed increase.
+
+# Interface Blueprint
+For your `SetSpeedNode`, below are the recommended interfaces:
+
+| Interface Name    | Type      | Description |
+|-------------------|-----------|-------------|
+| `/speed_setpoint` | Publish   | Publishes the set speed for other nodes|
+| `/vehicle_speed`  | Subscribe | Subscribes to current vehicle speed |
+| `/increment`      | Service   | Increments the set speed by 5 mph |
+| `/decrement`      | Service   | Decrements the set speed by 5 mph |
+| `/set`            | Service   | Changes the set speed to the current vehicle speed |
+
+> Note: Use this [tutorial](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html) for adding a subscription
