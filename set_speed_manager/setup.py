@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'set_speed_node = set_speed_manager.node:main'
+            'set_speed_node = set_speed_manager.set_speed_node:main'
         ],
     },
 )
