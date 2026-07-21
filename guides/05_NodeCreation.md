@@ -1,5 +1,5 @@
 # ROS2 Node Creation
-To run your module inside the ROS2 environment, we'll put it inside a node. To start, create a new file called `node.py` next to your software module.
+To run your module inside the ROS2 environment, we'll put it inside a node. To start, create a new file called `set_speed_node.py` next to your software module.
 
 ## Creating a Node
 A simple node can be created by inheriting from the `rclpy.node.Node` class:
