@@ -51,5 +51,7 @@ ros2 service call /decrement std_srvs/srv/Trigger
 
 Then check the value published to the `/speed_setpoint` topic, it should be `10`.
 
-## Final Note
+## Final Note and Pull Request
 These checks verify that the ROS interface is correctly integrated with your software module. The module's requirements should already be validated through your unit tests, so less robust checks are needed here. Avoid implementing new functionality at the node level that escapes your unit tests.
+
+From here, commit your latest changes and **open a pull request** on github. This will prompt a review of your code and any feedback. Congratulations!
