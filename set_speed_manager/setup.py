@@ -16,7 +16,7 @@ setup(
     maintainer='ubuntu',
     maintainer_email='willd182@my.erau.edu',
     description='TODO: Package description',
-    license='TODO: License declaration',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'set_speed_node = set_speed_manager.set_speed_node:main'
         ],
     },
 )
