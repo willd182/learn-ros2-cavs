@@ -1,12 +1,12 @@
 # ROS2 Package Creation
 Your first task is to create a new package to contain your code.
 
-## Python Package Creation Command
-To create a package for python based code, use the following command
+## C++ Package Creation Command
+To create a package for c++ based code, use the following command
 
 ```bash
 cd /workspaces/learn-ros2-cavs 
-ros2 pkg create set_speed_manager --build-type ament_python --dependencies rclpy
+ros2 pkg create set_speed_manager --build-type ament_cmake --dependencies rclcpp
 ```
 
 A new directory should appear in your workspace with the name `set_speed_manager`. This directory is an empty template to fill with your code. Commit this to your feature branch.
@@ -23,15 +23,11 @@ This commit acts as a baseline which allows you to start tracking changes you ma
 # About Package Structure
 A ROS2 package is a directory containing source code,. build files, and configuration files for a specific node or software module. The layout of the package can depend on the build type (ament_cmake or ament_python).
 
-Python packages follow the standard python module distribution format.
-- **resource/:** Contains a marker file that allows the package to be found
-- **<package_name>/:** Subdirectory matching package name that contains your python source code
-- **test/:** Contains tests for your python source code
+An `ament_cmake` package typically includes:
+- **include/<package_name>/:** Contains public C++ header files for the package.
+- **src/:** Contains the package's C++ source files and node implementations.
+- **CMakeLists.txt:** Defines how the package is built, including source files, dependencies, executables, and installation rules.
 - **package.xml:** Contains metadata (name, version, maintainer, dependencies)
-- **setup.cfg:** Required configuration when a package has executables (so ROS2 can find them)
-- **setup.py:** Defines package attributes and installation instructions
-
-> **Note:** The most commonly used directories will be your source code, tests, and package metadata in real world development.
 
 # Test-Build your New Package
 To ensure that your package was built correctly, run the following command:
