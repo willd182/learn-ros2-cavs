@@ -3,18 +3,18 @@
 
 class SetSpeedManager
 {
-    public:
-        SetSpeedManager();
+public:
+  SetSpeedManager();
 
-        int getSpeed() const;
-        void setSpeed(int speed);
-        void increment();
-        void decrement();
-    
-    private:
-    int set_speed_;
-    int min_speed_;
-    int max_speed_;
+  int getSpeed() const;
+  void setSpeed(int speed);
+  void increment();
+  void decrement();
+
+private:
+  int set_speed_;
+  int min_speed_;
+  int max_speed_;
 };
 
 #endif

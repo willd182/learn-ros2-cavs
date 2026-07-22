@@ -8,20 +8,20 @@ SetSpeedManager::SetSpeedManager()
 
 int SetSpeedManager::getSpeed() const
 {
-    return set_speed_;
+  return set_speed_;
 }
 
 void SetSpeedManager::setSpeed(int speed)
 {
-    set_speed_ = std::clamp(speed, min_speed_, max_speed_);
+  set_speed_ = std::clamp(speed, min_speed_, max_speed_);
 }
 
 void SetSpeedManager::increment()
 {
-    setSpeed(set_speed_ + 5);
+  setSpeed(set_speed_ + 5);
 }
 
 void SetSpeedManager::decrement()
 {
-    setSpeed(set_speed_ - 5);
+  setSpeed(set_speed_ - 5);
 }
